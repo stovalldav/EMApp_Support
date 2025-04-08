@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Management App - Help & Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Entertainment Management App</h1>
+            <p class="tagline">Organize your art business efficiently</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <input type="checkbox" id="show-search">
+            <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+            
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search Help Topics">
+                    <i class="fas fa-times-circle" id="clearSearch"></i>
+                </div>
+            </div>
+
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="quick-start">Quick Start</button>
+                <button class="tab-button" data-tab="user-guide">User Guide</button>
+                <button class="tab-button" data-tab="faq">FAQ</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="searchResults" class="container">
+        <h2>Search Results</h2>
+        <div id="searchResultsContent"></div>
+    </div>
+
+    <main class="container">
+        <!-- Quick Start Guide -->
+        <section id="quick-start" class="tab-content active">
+            <h2>Quick Start Guide</h2>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-building"></i>
+                    <h3>Setting Up Your Business Profile</h3>
+                </div>
+                <ol>
+                    <li>Tap the Settings tab at the bottom of the screen</li>
+                    <li>Enter your business name, contact information, and upload your logo</li>
+                    <li>Set your payment processing fee percentage if applicable</li>
+                    <li>Upload your Venmo QR code for easy payments from customers</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Adding Your Artists</h3>
+                </div>
+                <ol>
+                    <li>Navigate to the Artists tab at the bottom of the screen</li>
+                    <li>Tap the 'Add Artist' button</li>
+                    <li>Enter artist details including name, type, hourly rate, and per-attendee rates</li>
+                    <li>Add custom artist types if the default options don't fit your needs</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Managing Artist Availability</h3>
+                </div>
+                <ol>
+                    <li>Navigate to an artist's detail page</li>
+                    <li>Tap 'Manage Schedule' to view their availability</li>
+                    <li>Add new schedule entries to mark when they're unavailable</li>
+                    <li>Set up recurring unavailability patterns for regular commitments</li>
+                    <li>The system automatically checks for scheduling conflicts when booking artists for events</li>
+                    <li>Multi-day events will automatically block artists across all event days</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-users"></i>
+                    <h3>Managing Customers</h3>
+                </div>
+                <ol>
+                    <li>Navigate to the Customers tab</li>
+                    <li>Add new customers with the + button</li>
+                    <li>Flag problematic customers with 'Do Not Book' option</li>
+                    <li>Set up custom invoice patterns using # characters for sequential numbers (e.g., 'SMITH-####')</li>
+                    <li>Search and view customer history by tapping on a customer</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-calendar-day"></i>
+                    <h3>Booking Events</h3>
+                </div>
+                <ol>
+                    <li>Tap the Events tab and then the + button</li>
+                    <li>Fill in event details and select an existing customer or add a new one</li>
+                    <li>Toggle 'Multi-day Event' to ON for events spanning multiple days</li>
+                    <li>Choose artists, set rates, and select your billing type (hourly or per-attendee)</li>
+                    <li>Set up event details including setup time (which isn't billed)</li>
+                    <li>Apply discounts if needed (by hours or flat amount)</li>
+                    <li>The system will automatically check for artist scheduling conflicts</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Creating Invoices</h3>
+                </div>
+                <ol>
+                    <li>From an event detail page, tap 'Create Invoice'</li>
+                    <li>Review line items and make any adjustments</li>
+                    <li>Add processing fees if necessary</li>
+                    <li>Use custom invoice numbers or let the system generate sequential ones</li>
+                    <li>For customers with custom invoice patterns, the system will automatically suggest the next number in their sequence</li>
+                    <li>Email the invoice directly to your customer</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Recording Customer Payments</h3>
+                </div>
+                <ol>
+                    <li>From an invoice, tap 'Record Payment'</li>
+                    <li>Enter payment details and method</li>
+                    <li>Record partial payments if the customer hasn't paid in full</li>
+                    <li>Generate a receipt for the customer if needed</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Managing Artist Payments</h3>
+                </div>
+                <ol>
+                    <li>Navigate to the Artist Payments tab at the bottom of the screen</li>
+                    <li>To record a new payment, tap the 'Add' button</li>
+                    <li>Select the event and artist, and the app will suggest a payment amount</li>
+                    <li>Record payment details including date, method, and status</li>
+                    <li>View payment history for specific artists from their profile page</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <div class="section-header">
+                    <i class="fas fa-gift"></i>
+                    <h3>Managing Gift Certificates</h3>
+                </div>
+                <ol>
+                    <li>Navigate to the Gift Certificates tab</li>
+                    <li>Create new certificates with the + button</li>
+                    <li>Set amount, recipient details, and optional expiration date</li>
+                    <li>Print or email the certificate to the purchaser or recipient</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- User Guide -->
+        <section id="user-guide" class="tab-content">
+            <h2>User Guide</h2>
+            
+            <!-- Dashboard Section -->
+            <div class="user-guide-section">
+                <div class="section-toggle" data-section="dashboard">
+                    <h3>Dashboard</h3>
+                    <p>Overview of your upcoming events and business activities</p>
+                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="section-content" id="dashboard-content">
+                    <div class="how-to-guide">
+                        <h4>Using the Dashboard</h4>
+                        <ol>
+                            <li>Open the app and the Dashboard appears by default</li>
+                            <li>View your upcoming events in the calendar widget</li>
+                            <li>Check quick stats for earnings, upcoming events, and payments due</li>
+                            <li>Use quick action buttons to create new events, invoices, or payments</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="how-to-guide">
+                        <h4>Customizing Your Dashboard</h4>
+                        <ol>
+                            <li>Tap and hold on any widget to enter edit mode</li>
+                            <li>Drag widgets to rearrange their order</li>
+                            <li>Tap the gear icon on any widget to customize its settings</li>
+                            <li>Pull down to refresh and update all dashboard data</li>
+                            <li>Tap the date range at the top to change the time period for statistics</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="how-to-guide">
+                        <h4>Using Quick Actions</h4>
+                        <ol>
+                            <li>Tap the '+' button at the bottom of the Dashboard</li>
+                            <li>Select from available quick actions: New Event, New Invoice, Record Payment, etc.</li>
+                            <li>Fill in the required information in the form that appears</li>
+                            <li>Tap 'Save' to create the new item and return to the Dashboard</li>
+                            <li>Look for the confirmation indicator showing the action was completed</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Events Section -->
+            <div class="user-guide-section">
+                <div class="section-toggle" data-section="events">
+                    <h3>Events</h3>
+                    <p>Manage your calendar and client bookings</p>
+                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="section-content" id="events-content">
+                    <div class="how-to-guide">
+                        <h4>Creating a New Event</h4>
+                        <ol>
+                            <li>Tap the 'Events' tab at the bottom of the screen</li>
+                            <li>Tap the '+' button in the top-right corner</li>
+                            <li>Fill out the event details form with customer info, location, date, and time</li>
+                            <li>Select billing type (hourly or per-attendee)</li>
+                            <li>Add setup time (which won't be billed)</li>
+                            <li>Tap 'Select Artists' to add painters to the event</li>
+                            <li>Apply any discounts if needed</li>
+                            <li>Tap 'Save Event' to complete</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="how-to-guide">
+                        <h4>Managing Event Status</h4>
+                        <ol>
+                            <li>Open the event details by tapping on it in the Events list</li>
+                            <li>Tap 'Update Status' button</li>
+                            <li>Select new status: Inquiry, Scheduled, Confirmed, Completed, or Cancelled</li>
+                            <li>Add optional notes about the status change</li>
+                            <li>Tap 'Update' to save the changes</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="how-to-guide">
+                        <h4>Creating Multi-Day Events</h4>
+                        <ol>
+                            <li>In the Event creation screen, enter the starting date and time</li>
+                            <li>Toggle 'Multi-day Event' to ON</li>
+                            <li>The 'End Time' field will change to show both date and time options</li>
+                            <li>Select the ending date and time for the event</li>
+                            <li>When you assign artists, they will be blocked for the entire date range</li>
+                            <li>Multi-day events appear on all applicable days in the calendar</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artists Section -->
+            <div class="user-guide-section">
+                <div class="section-toggle" data-section="artists">
+                    <h3>Artists</h3>
+                    <p>Manage your team of artistic talent</p>
+                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="section-content" id="artists-content">
+                    <div class="how-to-guide">
+                        <h4>Adding a New Artist</h4>
+                        <ol>
+                            <li>Tap the 'Artists' tab at the bottom of the screen</li>
+                            <li>Tap the 'Add Artist' button at the bottom</li>
+                            <li>Enter the artist's name, contact information, and select their type</li>
+                            <li>To create a custom artist type, tap the 'New Type' button next to the type selector</li>
+                            <li>Set the hourly rate and per-attendee rate (if different)</li>
+                            <li>Add any notes about the artist</li>
+                            <li>Tap 'Save Artist' to complete</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="how-to-guide">
+                        <h4>Managing Artist Availability</h4>
+                        <ol>
+                            <li>Navigate to the artist's profile by tapping on them in the Artists list</li>
+                            <li>Tap 'Manage Schedule' under the Availability section</li>
+                            <li>Tap 'Add Schedule Entry' button</li>
+                            <li>Set the date range and select 'Unavailable' status</li>
+                            <li>For recurring unavailability, toggle 'Repeating Schedule' and choose pattern</li>
+                            <li>Select repeat frequency (Daily, Weekly, Monthly, or Custom)</li>
+                            <li>For weekly repeats, select specific days of the week</li>
+                            <li>For monthly repeats, choose specific dates or patterns</li>
+                            <li>Set an end date for the recurring pattern or select 'No End Date'</li>
+                            <li>Add notes if needed (e.g., 'Teaching class')</li>
+                            <li>Tap 'Save' to add to their schedule</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artist Payments Section -->
+            <div class="user-guide-section">
+                <div class="section-toggle" data-section="artist-payments">
+                    <h3>Artist Payments</h3>
+                    <p>Manage payments to your artists</p>
+                    <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="section-content" id="artist-payments-content">
+                    <div class="how-to-guide">
+                        <h4>Recording an Artist Payment</h4>
+                        <ol>
+                            <li>Tap the 'Artist Payments' tab at the bottom of the screen</li>
+                            <li>Tap the 'Add' button at the bottom of the screen</li>
+                            <li>Select the event from the list (only completed events are shown)</li>
+                            <li>Select the artist who worked at the event</li>
+                            <li>Review the suggested payment amount (calculated automatically)</li>
+                            <li>Adjust the amount if needed or tap 'Use Suggested Amount'</li>
+                            <li>Choose payment method (cash, check, Venmo, etc.)</li>
+                            <li>Select payment status (paid or pending)</li>
+                            <li>Add optional notes</li>
+                            <li>Tap 'Record Artist Payment' to save</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="how-to-guide">
+                        <h4>Understanding Suggested Payment Amounts</h4>
+                        <ol>
+                            <li>When recording a new artist payment, select the event and artist</li>
+                            <li>The app automatically calculates and displays a suggested payment amount</li>
+                            <li>For hourly billed events, this is (artist hourly rate × billable hours)</li>
+                            <li>For per-attendee events, this is (artist per-attendee rate × number of attendees)</li>
+                            <li>The suggestion is based on rates set in the artist's profile</li>
+                            <li>Event-specific artist rates will override the default rates for suggestions</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="tab-content">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-section">
+                <h3>General Questions</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I get started with the app?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Start by setting up your business profile in the Settings tab. Then add your artists, create customers, and begin booking events. The Quick Start Guide provides step-by-step instructions for getting up and running quickly.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I use the app on multiple devices?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can use the app on all your iOS devices by signing in with the same Apple ID. Your data will sync automatically between devices using iCloud.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my data backed up?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, your data is automatically backed up to iCloud if you have iCloud enabled on your device. You can also manually export a backup file from Settings > Backup & Restore.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h3>Billing and Payments</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I create an invoice for an event?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Open the event details and tap 'Create Invoice'. The app will automatically generate line items based on the event details. You can then review and modify before finalizing.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I create custom invoice numbers?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, when creating an invoice, toggle 'Use Custom Invoice Number'. You can then enter your preferred format, or use the suggested customer-specific format. For customers with a custom invoice pattern (like 'ABC-####'), the system will automatically generate the next sequential number.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I set up a custom invoice pattern for a customer?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Open the customer's profile, tap 'Edit Customer', and scroll to the 'Custom Invoice Numbering' section. Enter a pattern using # as placeholders for sequential numbers (e.g., 'SMITH-####'). The system will replace the # characters with incrementing numbers for each new invoice.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h3>Artist Management</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I track when artists are unavailable?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, on the artist's profile page, tap 'Manage Schedule' and add schedule entries with 'Unavailable' status. You can set one-time blocks or recurring unavailability patterns (daily, weekly, monthly). For weekly patterns, you can select specific days of the week, and for monthly patterns, you can choose specific dates or patterns like 'first Monday'.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens if I try to book an unavailable artist?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The app will warn you about the conflict when you try to add an artist to an event during a time they're marked as unavailable. You can choose to override this warning if needed.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h3>Events</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I create a multi-day event?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When creating a new event, toggle 'Multi-day Event' to ON. This will allow you to select both a start date/time and an end date/time that can span multiple days. The system will handle artist scheduling across all days of the event.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What does 'setup time' mean for an event?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Setup time is the period before the actual event starts when artists arrive to prepare. This time is tracked but not billed to the customer automatically. The billable duration is calculated from the event start time to end time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Entertainment Management App. All rights reserved.</p>
+            <p><a href="#" class="app-link">Download the app</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
